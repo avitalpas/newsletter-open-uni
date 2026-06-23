@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>עדכון פיתוח הדרכה והטמעת מערכות</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #edf0f5;
+  font-family: Calibri, Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+  color: #1a1e2e;
+}
+a { text-decoration: none; color: inherit; }
+
+.wrap { width: 100%; background: #edf0f5; padding: 28px 14px; }
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #dde2ec;
+}
+
+/* ── HEADER ── */
+.header {
+  background: #ffffff;
+  padding: 22px 28px 18px;
+  border-bottom: 2px solid #edf0f5;
+  text-align: center;
+}
+.header img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+}
+
+/* ── HERO ── */
+.hero {
+  background: #f7f9fc;
+  padding: 28px 32px 24px;
+  border-bottom: 1px solid #e4e9f2;
+  text-align: center;
+}
+.hero-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #274798;
+  line-height: 1.35;
+  margin-bottom: 10px;
+}
+.hero-title em {
+  font-style: normal;
+  color: #e84d11;
+}
+.hero-body {
+  font-size: 14px;
+  color: #5a6380;
+  line-height: 1.7;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* ── SECTION ── */
+.section {
+  padding: 26px 28px;
+}
+.section + .section {
+  border-top: 1px solid #e4e9f2;
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #274798;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e84d11;
+  display: inline-block;
+}
+.section-title-teal {
+  border-bottom-color: #5fc2d3;
+}
+
+/* ── כרטיסי תוכן ── */
+.sem-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.sem-card {
+  background: #f7f9fc;
+  border: 1px solid #e4e9f2;
+  border-radius: 8px;
+  padding: 14px 13px 12px;
+}
+.sem-card-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #274798;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+.sem-card-body {
+  font-size: 12px;
+  color: #5a6380;
+  line-height: 1.55;
+  margin-bottom: 9px;
+}
+.sem-card-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: #e84d11;
+}
+.sem-card-link-teal {
+  color: #3aabbf;
+}
+
+/* ── הערה וקישור לאתר ── */
+.notice-with-margin {
+  margin-top: 20px;
+  margin-bottom: 24px;
+  margin-left: 28px;
+  margin-right: 28px;
+  background: #fffaf4;
+  border: 1px solid #f5dfa0;
+  border-right: 3px solid #e84d11;
+  border-radius: 6px;
+  padding: 10px 13px;
+  font-size: 12px;
+  color: #8b5a2b;
+  line-height: 1.6;
+}
+.notice-with-margin strong { font-weight: 700; color: #5a3a15; }
+
+/* ── סקשן אתר העזרה ── */
+.help-section {
+  background: #f7f9fc;
+  border-top: 1px solid #e4e9f2;
+  padding: 26px 28px;
+  text-align: center;
+}
+.help-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #274798;
+  margin-bottom: 8px;
+}
+.help-section-body {
+  font-size: 13px;
+  color: #5a6380;
+  line-height: 1.65;
+  max-width: 440px;
+  margin: 0 auto 14px;
+}
+.help-btn {
+  display: inline-block;
+  background: #274798;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 9px 22px;
+  border-radius: 6px;
+  margin: 4px 5px;
+}
+.help-btn-outline {
+  background: transparent;
+  color: #274798;
+  border: 1.5px solid #274798;
+}
+
+/* ── כרטיס ביקור / CONTACT CARD ── */
+.contact-card {
+  background: #1e2a45;
+  padding: 28px 28px 22px;
+}
+.contact-logo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.contact-logo img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+}
+.contact-divider {
+  height: 1px;
+  background: rgba(255,255,255,0.12);
+  margin: 0 0 18px;
+}
+.contact-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.contact-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  max-width: 320px;
+  margin: 0 auto 18px;
+}
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 7px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.contact-btn-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  flex-shrink: 0;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+.contact-btn-icon i { color: #ffffff; font-size:14px; }
+.contact-btn-icon-wa, .contact-btn-icon-chat, .contact-btn-icon-tel { background: transparent; border-color: rgba(255,255,255,0.9); }
+.contact-btn-text { flex: 1; }
+.contact-btn-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.55);
+  display: block;
+  font-weight: 400;
+  margin-top: 1px;
+}
+.contact-meta {
+  text-align: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.28);
+  line-height: 1.6;
+}
+.contact-meta a { color: rgba(255,255,255,0.35); }
+
+@media (max-width: 460px) {
+  .wrap { padding: 0; }
+  .container { border-radius: 0; border: none; }
+  .hero, .section, .help-section, .contact-card { padding-left: 18px; padding-right: 18px; }
+  .notice { margin-left: 18px; margin-right: 18px; }
+  .sem-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 19px; }
+  .contact-btns { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="container">
+
+
+<!-- ════════════════════════════
+     HEADER - לוגו בלבד
+     להחליף את ה-src לנתיב הלוגו האמיתי
+════════════════════════════ -->
+<div class="header">
+  <img src="LogoHorizon.png" alt="לוגו" style="max-width:300px;width:100%;height:auto;">
+</div>
+
+
+<!-- ════════════════════════════
+     HERO
+════════════════════════════ -->
+<div class="hero">
+  <h1 class="hero-title">
+    המייל שנשלח אליכם<br>
+    <em>בול בזמן הנכון בסמסטר</em>
+  </h1>
+  <p class="hero-body">
+    אנחנו יודעים שבתקופות <strong>העומס של הסמסטר</strong>, הדבר האחרון שצריך הוא להתחיל לחפש איפה נמצאת כל <strong>הדרכה</strong>, איזו <strong>מערכת רלוונטית</strong> לאיזו משימה, ואיך בכלל מתחילים. בדיוק בשביל זה בנינו עבורכם באתר העזרה <strong>ניווט שמותאם למרכזי הוראה</strong>: לפי שלבי הסמסטר, לפי הצרכים שלכם, ועם <strong>חומרים שמתעדכנים באופן שוטף</strong> — כדי שתוכלו להגיע מהר למה שאתם צריכים ולהמשיך לעבוד.
+  </p>
+</div>
+
+<!-- ════════════════════════════
+     הערה וקישור לאתר
+════════════════════════════ -->
+<div class="notice-with-margin">
+  <img src="ExclamationMark_icn.png" alt="!" style="width:16px;height:16px;vertical-align:middle;margin-left:8px;">
+  <strong>על מנת לקרוא עוד:</strong> <a href="https://opal.openu.ac.il/" target="_blank" style="color:#e84d11;font-weight:700;">התחברו לאתר הקורסים כאן</a>, ואז לחצו על הקישורים שמופיעים במייל הזה.
+</div>
+
+
+<!-- ════════════════════════════
+     סקשן 1: סיום סמסטר 2026ב
+════════════════════════════ -->
+<div class="section">
+  <div class="section-title">סיום סמסטר 2026ב</div>
+
+  <div class="sem-grid">
+
+    <div class="sem-card">
+      <div class="sem-card-title">סגירת מטלות וציונים</div>
+      <div class="sem-card-body">הדרכות טכניות שיעזרו לכם לבצע את הפעולות המרכזיות של סוף הסמסטר: בדיקת מטלות, הזנת ציונים, משובים ועדכונים אחרונים במערכות הרלוונטיות.</div>
+      <a href="https://LINK-1" target="_blank" class="sem-card-link">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">בחינות וסיום קורס</div>
+      <div class="sem-card-body">ריכוז חומרים שיעזור לכם להתמצא בפעולות הטכניות הנדרשות סביב תקופת הבחינות וסגירת הקורס.</div>
+      <a href="https://LINK-2" target="_blank" class="sem-card-link">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">פניות סטונדטים בתקופת עומס</div>
+      <div class="sem-card-body">כשיש הרבה פניות, הרבה משימות והרבה מערכות פתוחות במקביל — ריכזנו עבורכם את ההדרכות שיעזרו להבין איפה מבצעים כל פעולה.</div>
+      <a href="https://LINK-3" target="_blank" class="sem-card-link">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">בדיקות אחרונות לפני שסוגרים</div>
+      <div class="sem-card-body">חומרים ממוקדים לפעולות שכדאי לוודא בסוף הסמסטר, כדי לסיים את הקורס בצורה מסודרת ובטוחה יותר.</div>
+      <a href="https://LINK-4" target="_blank" class="sem-card-link">קרא עוד ←</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════
+     סקשן 2: פתיחת סמסטר 2026ג
+════════════════════════════ -->
+<div class="section">
+  <div class="section-title section-title-teal">פתיחת סמסטר 2026ג</div>
+
+  <div class="sem-grid">
+
+    <div class="sem-card">
+      <div class="sem-card-title">הכנת סביבת הקורס</div>
+      <div class="sem-card-body">הדרכות טכניות לפתיחה, עדכון וארגון סביבת הקורס לקראת תחילת הסמסטר.</div>
+      <a href="https://LINK-5" target="_blank" class="sem-card-link sem-card-link-teal">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">היכרות עם המערכות הרלוונטיות</div>
+      <div class="sem-card-body">מדריך קליל ואינטראקטיבי שיעזור לכם להבין אילו מערכות רלוונטיות למרכזי הוראה, מתי משתמשים בכל אחת, איך מתחברים, ואילו סיסמאות נדרשות.</div>
+      <a href="https://LINK-6" target="_blank" class="sem-card-link sem-card-link-teal">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">ניהול צוות ההוראה והקבוצות</div>
+      <div class="sem-card-body">חומרי עזר לעבודה עם מנחים, קבוצות לימוד, הרשאות ופעולות טכניות נוספות שחשוב להסדיר בתחילת הסמסטר.</div>
+      <a href="https://LINK-7" target="_blank" class="sem-card-link sem-card-link-teal">קרא עוד ←</a>
+    </div>
+
+    <div class="sem-card">
+      <div class="sem-card-title">תקשורת עם סטודנטים ופרסום מידע</div>
+      <div class="sem-card-body">הדרכות שיעזרו לכם לשלוח הודעות, לעדכן מידע ולוודא שהסטודנטים מקבלים את מה שהם צריכים בזמן.</div>
+      <a href="https://LINK-8" target="_blank" class="sem-card-link sem-card-link-teal">קרא עוד ←</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════
+     אתר העזרה
+════════════════════════════ -->
+<div class="help-section">
+  <div class="help-section-title">לא צריך לזכור הכל. בשביל זה <strong>האתר כאן</strong>.</div>
+  <p class="help-section-body">
+    <strong>אתר העזרה לסגל</strong> מרכז עבורכם <strong>חומרי הדרכה טכניים</strong> ל<strong>מערכות השונות</strong> באוניברסיטה הפתוחה, עם <strong>ניווט שתוכנן במיוחד</strong> כדי להקל על העבודה השוטפת של <strong>מרכזי הוראה</strong>. אפשר להיכנס בכל שלב בסמסטר, לבחור את השלב או המשימה הרלוונטיים, ולהגיע ישירות לחומרים שיכולים לעזור לכם לבצע אותה.
+  </p>
+  <a href="https://opal.openu.ac.il/course/view.php?id=50089" target="_blank" class="help-btn">כניסה לאתר העזרה לסגל ←</a>
+</div>
+
+
+<!-- ════════════════════════════
+     כרטיס ביקור / יצירת קשר
+════════════════════════════ -->
+<div class="contact-card">
+
+  <div class="contact-title">צריכים עזרה? פנייה למוקד משו"ב</div>
+
+  <div class="contact-btns">
+
+    <a href="https://wa.me/97297782225/" target="_blank" class="contact-btn">
+      <div class="contact-btn-icon contact-btn-icon-wa"><i class="fab fa-whatsapp"></i></div>
+      <div class="contact-btn-text">
+        שלחו הודעה בווטסאפ
+        <span class="contact-btn-label">09-7782225</span>
+      </div>
+    </a>
+
+    <a href="https://www.openu.ac.il/about/departments/ComputerUnit/Pages/glassix.aspx" target="_blank" class="contact-btn">
+      <div class="contact-btn-icon contact-btn-icon-chat"><i class="fas fa-comment-dots"></i></div>
+      <div class="contact-btn-text">
+        התכתבו עמנו ב-ChatBOT
+        <span class="contact-btn-label">א'-ה', בשעות 08:00-18:00</span>
+      </div>
+    </a>
+
+    <a href="tel:097782225" class="contact-btn">
+      <div class="contact-btn-icon contact-btn-icon-tel"><i class="fas fa-phone"></i></div>
+      <div class="contact-btn-text">
+        או התקשרו למספר
+        <span class="contact-btn-label">09-7782225 &nbsp;|&nbsp; א'-ה', בשעות 08:00-13:00</span>
+      </div>
+    </a>
+
+  </div>
+
+  <div class="contact-divider"></div>
+
+  <div class="contact-logo">
+    <img src="LogoWhite.png" alt="לוגו" style="max-width:120px;width:100%;height:auto;">
+
+  </div>
+
+  <div class="contact-meta">
+    אתר העזרה לסגל כולל חומרי הדרכה טכניים לשימוש במערכות האוניברסיטה הפתוחה. האתר אינו מחליף נהלים, הנחיות פדגוגיות או מידע שאינו טכני.<br>
+    מייל זה נשלח ממערכת פאבליקטורס עבור מחלקת משו"ב, האוניברסיטה הפתוחה. | <a href="https://LINK-UNSUBSCRIBE">הסרה מרשימת התפוצה</a>
+  </div>
+
+</div>
+
+
+</div><!-- /container -->
+</div><!-- /wrap -->
+</body>
+</html>
